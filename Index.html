@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peringatan Sistem</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 20%;
+      font-size: 24px;
+      animation: flash 0.5s infinite alternate;
+    }
+
+    @keyframes flash {
+      from { background-color: black; }
+      to { background-color: darkred; }
+    }
+
+    .warning {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="warning">!!! PERINGATAN !!!</div>
+  <div>HP kamu sedang disadap!</div>
+  <div>Semua data sedang dikirim ke penyimpanan iky s ja...</div>
+  <script>
+    // Getar HP (jika didukung)
+    if (navigator.vibrate) {
+      setInterval(() => {
+        navigator.vibrate([200, 100, 200]);
+      }, 1000);
+    }
+
+    // Suara efek (opsional)
+    const beep = new Audio("https://www.soundjay.com/button/beep-07.wav");
+    setInterval(() => {
+      beep.play();
+    }, 3000);
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman Terkunci</title>
+  <script>
+    let bisaKeluar = false;
+
+    window.onbeforeunload = function (e) {
+      if (!bisaKeluar) {
+        e.preventDefault();
+        e.returnValue = '';
+        return '';
+      }
+    };
+
+    function keluarDenganAman() {
+      bisaKeluar = true;
+      window.location.href = 'https://www.instagram.com/ikysaputra.__/profilecard/?igsh=MTZzanVjM3dhcmpjYw==https://www.instagram.com/ikysaputra.__/profilecard/?igsh=MTZzanVjM3dhcmpjYw=='; // Ganti dengan URL tujuan keluar
+    }
+  </script>
+</head>
+<body>
+  <h1>Semakin lama akan semakin berbahaya!</h1>
+  <p>Anda tidak bisa meninggalkan halaman ini kecuali follow akun IG utama iky s ja.</p>
+  <button onclick="terimakasih atas kerjasamanya()">masuk</button>
+</body>
+</html>
+
